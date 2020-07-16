@@ -59,8 +59,10 @@ public class ButtonGridView extends GridView {
 
                 if(position != 9){
                     btn.setText(String.valueOf(position+1));
+                    btn.setNumber(position +1);
                 }else{
                     btn.setText("DEL");
+                    btn.setNumber(0);
                 }
 
                 return btn;
