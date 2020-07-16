@@ -2,7 +2,7 @@ package com.example.sudokutest;
 
 import android.content.Context;
 
-import com.example.sudokutest.View.GameGrid;
+import com.example.sudokutest.View.sudokugrid.GameGrid;
 
 public class GameEngine {
 
@@ -21,6 +21,7 @@ public class GameEngine {
 
     public void createGrid(Context context){
         int [][] Sudoku = SudokuGenerator.getInstance().generateGrid();
+        Sudoku = SudokuGenerator.getInstance().removeElements(Sudoku);
         grid = new GameGrid(context);
         grid.setGrid(Sudoku);
 

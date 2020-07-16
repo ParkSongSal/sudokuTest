@@ -1,14 +1,10 @@
-package com.example.sudokutest.View;
+package com.example.sudokutest.View.sudokugrid;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.util.AttributeSet;
-import android.view.View;
-
-import androidx.annotation.Nullable;
 
 public class SudokuCell extends BaseSudokuCell {
 
@@ -44,6 +40,11 @@ public class SudokuCell extends BaseSudokuCell {
         Rect bounds = new Rect();
         mPaint.getTextBounds(String.valueOf(getValue()), 0, String.valueOf(getValue()).length(), bounds);
 
-        canvas.drawText(String.valueOf(getValue()), (getWidth() - bounds.width()) / 2, (getHeight() + bounds.height()) / 2, mPaint);
+
+        if(getValue() !=0){
+            canvas.drawText(String.valueOf(getValue()), (getWidth() - bounds.width()) / 2, (getHeight() + bounds.height()) / 2, mPaint);
+        }
+
+
     }
 }

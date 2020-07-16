@@ -1,4 +1,4 @@
-package com.example.sudokutest.View;
+package com.example.sudokutest.View.sudokugrid;
 
 import android.content.Context;
 

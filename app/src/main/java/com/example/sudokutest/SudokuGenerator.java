@@ -62,6 +62,21 @@ public class SudokuGenerator {
         return Sudoku;
     }
 
+    public int[][] removeElements(int[][] Sudoku){
+        int i=0;
+
+        while (i<30){
+            int x = rand.nextInt(9);
+            int y = rand.nextInt(9);
+
+            if(Sudoku[x][y] !=0){
+                Sudoku[x][y] = 0;
+                i++;
+            }
+        }
+        return Sudoku;
+    }
+
     private void clearGrid(int[][] Sudoku) {
         Availlable.clear();
 

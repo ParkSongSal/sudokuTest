@@ -1,9 +1,7 @@
-package com.example.sudokutest.View;
+package com.example.sudokutest.View.sudokugrid;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -12,7 +10,6 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.sudokutest.GameEngine;
-import com.example.sudokutest.R;
 
 public class SudokuGridView extends GridView {
 

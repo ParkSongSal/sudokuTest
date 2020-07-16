@@ -11,7 +11,7 @@
     tools:context=".MainActivity">
 
 
-    <com.example.sudokutest.View.SudokuGridView
+    <com.example.sudokutest.View.sudokugrid.SudokuGridView
         android:id="@+id/sudokuGridView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,5 +20,15 @@
         android:verticalSpacing="0dp">
 
 
-    </com.example.sudokutest.View.SudokuGridView>
+    </com.example.sudokutest.View.sudokugrid.SudokuGridView>
+
+    <com.example.sudokutest.View.buttongrid.ButtonGridView
+        android:id="@+id/buttonGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sudokuGridView"
+        android:numColumns="6">
+
+    </com.example.sudokutest.View.buttongrid.ButtonGridView>
+
 </RelativeLayout>
