@@ -1,10 +1,14 @@
 package com.example.sudokutest;
 
+import android.content.Context;
+
+import com.example.sudokutest.View.GameGrid;
+
 public class GameEngine {
 
     private static GameEngine instance;
 
-    private int[][] Sudoku;
+    private GameGrid grid = null;
 
     private GameEngine(){}
 
@@ -15,11 +19,14 @@ public class GameEngine {
         return instance;
     }
 
-    public int[][] getSudoku(){
-        return Sudoku;
+    public void createGrid(Context context){
+        int [][] Sudoku = SudokuGenerator.getInstance().generateGrid();
+        grid = new GameGrid(context);
+        grid.setGrid(Sudoku);
+
     }
 
-    public void setSudoku(int[][] sudoku){
-        Sudoku = sudoku;
+    public GameGrid getGrid(){
+        return grid;
     }
 }
