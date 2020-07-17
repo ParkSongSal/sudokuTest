@@ -29,10 +29,13 @@ public class SudokuGenerator {
 
         int currentPos = 0;
 
-        clearGrid(Sudoku);
+
 
         while (currentPos < 81) {
 
+            if( currentPos == 0 ){
+                clearGrid(Sudoku);
+            }
 
             if (Availlable.get(currentPos).size() != 0) {
                 int i = rand.nextInt(Availlable.get(currentPos).size());
@@ -62,10 +65,11 @@ public class SudokuGenerator {
         return Sudoku;
     }
 
+    // 빈칸 갯수 생성 Method
     public int[][] removeElements(int[][] Sudoku){
         int i=0;
 
-        while (i<30){
+        while (i<10){    // 빈칸 3개
             int x = rand.nextInt(9);
             int y = rand.nextInt(9);
 

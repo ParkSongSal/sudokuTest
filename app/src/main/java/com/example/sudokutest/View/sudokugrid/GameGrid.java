@@ -1,12 +1,17 @@
 package com.example.sudokutest.View.sudokugrid;
 
 import android.content.Context;
+import android.widget.Toast;
+
+import com.example.sudokutest.SudokuChecker;
 
 public class GameGrid {
     private SudokuCell[][] Sudoku = new SudokuCell[9][9];
 
+    private Context context;
 
     public GameGrid(Context context){
+        this.context = context;
         for(int x = 0; x<9; x++){
             for(int y=0; y<9; y++){
                 Sudoku[x][y] = new SudokuCell(context);
@@ -42,5 +47,18 @@ public class GameGrid {
 
     public void setItem(int x, int y, int number){
         Sudoku[x][y].setValue(number);
+    }
+
+    public void checkGame(){
+        int[][] sudGrid = new int[9][9];
+        for(int x=0; x<9;x++){
+            for(int y=0;y<9;y++){
+                sudGrid[x][y] = getItem(x,y).getValue();
+            }
+        }
+
+        if(SudokuChecker.getInstance().checkSudoku(sudGrid)){
+            Toast.makeText(context, "Sudoku 문제 해결!!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

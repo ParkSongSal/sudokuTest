@@ -43,5 +43,7 @@ public class GameEngine {
         if (selectedPosX != -1 && selectedPosY != -1) {
             grid.setItem(selectedPosX, selectedPosY, number);
         }
+
+        grid.checkGame();
     }
 }
